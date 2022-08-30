@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Game of Life</title>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+        <link href="style.css" rel="stylesheet">
+        <script src="jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <div class="helper" id="helper">
+            <div class="modal-header">
+                <div class="title">Help Menu</div>
+                <button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                Rules:
+                <ol type="1">
+                    <li>Any live cell with two or three live neighbours survives.</li>
+                    <li>Any dead cell with three live neighbours becomes a live cell.</li>
+                    <li>All other live cells die in the next generation. Similarly, all other dead cells stay dead.</li>
+                </ol>
+                Control:
+                <ul> 
+                    <li>Press the Play/Pause button continue or pause the simulation.</li>
+                    <li>The "Next" button will go-to the generation.</li>
+                    <li>The "Clear" button is only available on the zeroth generation, and will remove all alive cells.</li>
+                    <li>The "Reset" button is only available upon the first generation. It reverts the board back to the state of when the play button was initially pressed on generation 0.</li>
+                    <li>Click on any rectangle to give life to a cell.</li>
+                </ul>
+                See <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" target="_blank">Wikipedia</a> for more information.
+            </div>
+        </div>
+        <div class="setter" id="setter">
+            <div class="modal-header">
+                <div class="title">Game Settings</div>
+                <button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <label for="slider-speed">Speed(ms):</label>
+                <div id="slider-speed"></div>
+                <div id="speed">500</div>                
+                <label for="length-cells">Length Cells:</label>
+                <div id="length-cells"></div>
+                <div id="length-cells-value">16</div>
+                <label for="width-cells">Width Cells:</label>
+                <div id="width-cells"></div>
+                <div id="width-cells-value">32</div>
+            </div>
+        </div>
+
+        <div class="game active">
+            <div class="title">
+                <div class="generation"><label for=".count">Generation:</label> <span class="count">0</span></div>
+                <span>Game of Life</span>
+            </div>
+            <div class="life">
+                <!--Insert cells here.-->
+            </div>
+            <div class="buttons">
+                <button class="settings">Settings</button>
+                <button data-modal-target="#modal" class="help">Help</button>
+                <button class="play">Play</button>
+                <button class="next">Next</button>
+                <button class="clear">Clear</button>
+            </div>
+        </div>
+    </body>
+</html>    
