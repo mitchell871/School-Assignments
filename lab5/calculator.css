@@ -1,0 +1,164 @@
+/*
+    Calculator
+    cs 3990 lab5
+    winter 2022
+    Mitchell Vanderhoek
+*/
+
+
+*{
+    padding: 0;
+    margin: 0;
+    background-origin: padding-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    font-size: 16px;
+}
+
+.calculator{
+    position: absolute;
+    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.calc-container{
+    background-color: #3C4043;
+    width: 600px;
+    height: auto; 
+    border-radius: 12px;   
+}
+
+.output{
+    width: 100%;
+    word-wrap: break-word;
+    word-break: break-all;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+}   
+
+.operation{
+    width: 600px;
+    height: 70px;
+
+    color: #FFF;
+
+    font-size: 1.9em;
+    font-weight: bold;
+
+    position: relative;
+    overflow: hidden;
+}
+.operation .value{
+    position: absolute;
+
+    bottom: 5px;
+    right : 10px;
+    
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.result {
+    width: 600px;
+    height: 140px;
+
+    color: #FFF;
+
+    font-size: 2.6em;
+    font-weight: bold;
+    
+    overflow: hidden;
+    position: relative;
+}
+
+.result .value{
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+    right : 10px;
+    
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+.input {
+    background-color: #3C4043;
+    border: 1px solid #5F6368;
+    height: 300px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 8px
+}
+
+.row button{
+    width: 75px;
+    height: 50px;
+
+    font-size: 1.5em;
+
+    border: none;
+    background-color: #3C4043;
+    color: #FFF;
+
+    margin : 0;
+
+    cursor: pointer;
+}
+
+.row > button:nth-child(-n+3), .row > button:last-child {
+    background-color: #5F6368;
+}
+
+.row button:hover{
+    font-weight: bold;
+}
+
+.row #calculate{
+    color: #3C4043;
+    background-color: #4285F4;
+    
+}
+.row #delete{
+    color: #FFF;
+    background-color: #5F6368;
+    padding-right: 4px;
+}
+
+.row button {
+    border-radius: 10px;
+    background: rgb(128,134,139);
+    background: linear-gradient(circle, rgba(128,134,139,1) 0%, rgba(60,64,67,1) 100%);
+}
+
+.row > button:nth-child(-n+3), .row > button:last-child {
+    background-color: #5F6368;
+}
+
+.input:first-child > .row button:nth-child(-n+2) {
+    background-color: blue;
+}
+
+#open-parenthesis, #close-parenthesis, #clear {
+    background-color: #5F6368;
+}
+.input button span{
+    font-size: 8px;
+    position: absolute;
+}
+
+.active-angle{
+    background-color: #4285F4 !important;
+    color: #FFF !important;
+}
