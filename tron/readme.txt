@@ -1,1 +1,1 @@
-You'll need the irvine library to run this.
+You'll need the irvine library to run and compile this.
